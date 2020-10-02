@@ -16,4 +16,6 @@ RUN dnf install --quiet --nodocs --assumeyes \
   libtiff-${libtiff_version} \
   libtiff-devel-${libtiff_devel_version}
 
+RUN dnf clean all 
+
 CMD ["/usr/bin/java", "--version"]

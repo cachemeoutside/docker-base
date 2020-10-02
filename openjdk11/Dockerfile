@@ -13,4 +13,6 @@ ARG openjdk11_version=11.0.8.10-0.el8_2
 RUN dnf install --quiet --nodocs --assumeyes \
   java-11-openjdk-headless-${openjdk11_version}
 
+RUN dnf clean all
+
 CMD ["/usr/bin/java", "--version"]
