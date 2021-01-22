@@ -10,18 +10,12 @@ jobs:
       - name: install microk8s
         run: |
           sudo snap install microk8s --classic --channel=1.18/stable
-      - name: check kubectl version
-        run: |
-          kubectl version
-      - name: informational
-        run: |
-          ls -la ~/.kube
       - name: set permissions
         run: |
-          sudo usermod -a -G microk8s runner
+          sudo usermod -a -G microk8s $USER
       - name: set ownership
         run: |
-          sudo chown -f -R runner ~/.kube
+          sudo chown -f -R $USER ~/.kube
       - name: check microk8s status
         run: |
           microk8s status --wait-ready
