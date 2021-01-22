@@ -16,6 +16,9 @@ jobs:
       - name: reload group assignments
         run: |
           exec sudo su -l $USER
+      - name: reload group assignments
+        run: |
+          sudo chown -f -R runner ~/.kube
       - name: check microk8s status
         run: |
           microk8s status --wait-ready
