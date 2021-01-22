@@ -13,9 +13,6 @@ jobs:
       - name: set permissions
         run: |
           sudo usermod -a -G microk8s $USER
-      - name: set ownership
-        run: |
-          sudo chown -f -R $USER ~/.kube
       - name: check microk8s status
         run: |
           microk8s status --wait-ready
