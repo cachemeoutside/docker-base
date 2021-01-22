@@ -10,15 +10,12 @@ jobs:
       - name: install microk8s
         run: |
           sudo snap install microk8s --classic --channel=1.18/stable
-      - name: check group
-        run: |
-          cat /etc/group
       - name: set permissions
         run: |
           sudo usermod -a -G microk8s $USER
-      - name: check after group
+      - name: reload group assignments
         run: |
-          cat /etc/group
+          su - $USER
       - name: check microk8s status
         run: |
           microk8s status --wait-ready
