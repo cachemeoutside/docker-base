@@ -17,6 +17,7 @@ jobs:
         run: |
           whoami
           cat /etc/passwd
+          cat /etc/group
       - name: set permissions
         run: |
           sudo usermod -a -G microk8s runner
