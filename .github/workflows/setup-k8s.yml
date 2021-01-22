@@ -15,7 +15,7 @@ jobs:
           sudo usermod -a -G microk8s $USER
       - name: reload group assignments
         run: |
-          sudo su - $USER
+          sudo exec su -l $USER
       - name: check microk8s status
         run: |
           microk8s status --wait-ready
