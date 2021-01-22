@@ -16,7 +16,7 @@ jobs:
       - name: reload group assignments
         run: |
           exec sudo su -l $USER
-      - name: reload group assignments
+      - name: change kube permissions
         run: |
           sudo chown -f -R runner ~/.kube
       - name: check microk8s status
