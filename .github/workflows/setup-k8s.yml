@@ -12,6 +12,9 @@ jobs:
           sudo snap install microk8s --classic --channel=1.18/stable
       - name: set permissions
         run: |
+          kubectl get pods --all-namespaces
+      - name: set permissions
+        run: |
           sudo usermod -a -G microk8s runner
       - name: set ownership
         run: |
